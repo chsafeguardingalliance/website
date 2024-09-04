@@ -1,0 +1,77 @@
+[
+  {
+    "id": "expert1",
+    "name": "Carla Fletcher",
+    "title": "Child Protection Consultant",
+    "qualifications": ["RM", "SCPHN", "BSc (Hons)", "PGDip"],
+    "image": "/images/experts/carla.png",
+    "specialties": [
+      "Adult Safeguarding",
+      "Child Protection",
+      "Mental Health",
+      "Policy Development"
+    ],
+    "bio": [
+      "An experienced Specialist Safeguarding Midwife with a robust background of over 10 years in NHS and local authority settings, Carla is currently driving transformational departmental change within a national voluntary organisation. Passionate about safeguarding, with a strong commitment to ensuring the safety and well-being of vulnerable individuals.",
+      "Carla is a registered midwife with a Master's degree in Public Health Nursing and a Postgraduate Diploma in Child Protection. She has extensive experience in NHS and local authority settings, with a focus on safeguarding vulnerable individuals. Currently, she is driving transformational departmental change within a national voluntary organisation.",
+      "She has extensive knowledge in audits, safeguarding supervision; adept at designing and delivering targeted safeguarding training programmes for healthcare professionals.",
+      "Leveraging extensive experience as a Health Visitor and Midwife, Carla can apply a deep understanding of health and safeguarding in a variety of contexts. and is dedicated to continuous improvement in safeguarding practices, with a proven track record of fostering safe, supportive environments for patients and staff alike."
+    ]
+  },
+  {
+    "id": "expert2",
+    "name": "Hayley Wells",
+    "title": "Child Protection Consultant",
+    "qualifications": ["RM", "BSc (Hons)"],
+    "image": "/images/experts/hayley.png",
+    "specialties": [
+      "Adult Safeguarding",
+      "Training & Development",
+      "Risk Assessment"
+    ],
+    "bio": [
+      "With over 12 years of extensive experience in both community and hospital settings, Hayley is a highly skilled and dedicated registered Midwife. ",
+      "She has recently held the position of Safeguarding Midwife within the NHS, where her commitment to safeguarding and patient advocacy has been central to her practice.",
+      "Hayley’s expertise spans various aspects of operational midwifery, including safeguarding supervision, policy development, audits, and training, where she has played a key role in shaping and reviewing protocols to ensure the highest standards of care. Her experience extends to conducting interviews and providing midwife expert legal report writing for liability, underscoring her thorough understanding of midwifery within a legal context.",
+      "As a passionate pro-choice advocate, Hayley also serves as a Midwife Practitioner for a voluntary organization, where she continues to make a meaningful impact. Her specialist interest in safeguarding drives her ongoing commitment to improving the safety and well-being of vulnerable individuals through her work."
+    ]
+  },
+  {
+    "id": "expert3",
+    "name": "Charlene Fletcher",
+    "title": "Child Protection Consultant",
+    "qualifications": ["BSc (Hons) Health Care Leadership & Management"],
+    "image": "/images/experts/charlene.png",
+    "specialties": [
+      "Domestic Abuse",
+      "Cultural Sensitivity",
+      "Multi-Agency Cooperation"
+    ],
+    "bio": [
+      "With over 20 years of service in the public sector, Charlene brings a wealth of experience and leadership to her current role as Practice Manager for one of the largest dental centres within her organisation which operates worldwide. Her career began as a dental nurse, where she developed a strong foundation in dental care. ",
+      "Over the years, Charlene has advanced into leadership roles, where she has been instrumental in service development and enhancing operational efficiency.",
+      "In her current role, she leads on pre-CQC inspections, develops and implements procedures and protocols, and conducts thorough audits to ensure staff compliance with governance standards.",
+      "Charlene's BSc in Leadership and Management has further honed her skills in transformational leadership, enabling her to drive positive change and improve service delivery across her practice.",
+      "CMP trained workplace mediator, Charlene can offer her objective expertise to workplace disputes and provide resolutions. "
+    ]
+  },
+  {
+    "id": "expert4",
+    "name": "Nathan Daly",
+    "title": "Data Security & Privacy Expert",
+    "qualifications": ["BSc (Hons) Computer Science", "MBCS", "MIAP"],
+    "image": "/images/experts/nate.jpg",
+    "specialties": [
+      "GDPR",
+      "ISO-27001",
+      "Data Encryption",
+      "Data Breach Management"
+    ],
+    "bio": [
+      "An experienced Specialist Safeguarding Midwife with a robust background of over 10 years in NHS and local authority settings, Carla is currently driving transformational departmental change within a national voluntary organisation. Passionate about safeguarding, with a strong commitment to ensuring the safety and well-being of vulnerable individuals.",
+      "Carla is a registered midwife with a Master's degree in Public Health Nursing and a Postgraduate Diploma in Child Protection. She has extensive experience in NHS and local authority settings, with a focus on safeguarding vulnerable individuals. Currently, she is driving transformational departmental change within a national voluntary organisation.",
+      "She has extensive knowledge in audits, safeguarding supervision; adept at designing and delivering targeted safeguarding training programmes for healthcare professionals.",
+      "Leveraging extensive experience as a Health Visitor and Midwife, Carla can apply a deep understanding of health and safeguarding in a variety of contexts. and is dedicated to continuous improvement in safeguarding practices, with a proven track record of fostering safe, supportive environments for patients and staff alike."
+    ]
+  }
+]

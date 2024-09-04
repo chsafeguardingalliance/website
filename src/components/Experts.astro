@@ -1,0 +1,79 @@
+---
+import experts from "../data/experts.json";
+---
+
+<astro-experts>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {
+      experts.map((expert) => (
+        <div class="card bg-base-100 shadow-xl relative overflow-hidden">
+          <div class="card-body items-center text-center">
+            <img
+              src={expert.image}
+              alt={expert.name}
+              class="w-32 h-32 rounded-full mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-0">{expert.name}</h3>
+            <div class="flex flex-wrap justify-center gap-2 mb-3">
+              <p class="text-sm text-gray-500">
+                {expert.qualifications.join(", ")}
+              </p>
+            </div>
+            <p class="text-lg text-gray-600 mb-2">{expert.title}</p>
+            <div class="flex flex-wrap justify-center gap-2 mb-4">
+              {expert.specialties.map((specialty) => (
+                <span class="badge badge-secondary">{specialty}</span>
+              ))}
+            </div>
+            <button
+              id={`${expert.id}-button`}
+              class="btn btn-primary btn-sm z-10"
+              data-bio={`${expert.id}`}
+            >
+              Read More
+            </button>
+          </div>
+          <div
+            id={`${expert.id}-bio`}
+            class="absolute top-0 left-0 w-full h-full bg-white bg-opacity-95 p-6 transform -translate-y-full transition-transform duration-300 ease-in-out flex items-center justify-center"
+          >
+            <div class="text-gray-600 overflow-y-auto max-h-full pb-20">
+              {expert.bio.map((paragraph, index) => (
+                <p key={index} class="mb-4">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</astro-experts>
+
+<script>
+  class AstroExperts extends HTMLElement {
+    constructor() {
+      super();
+
+      const buttons = this.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.textContent = "Read More";
+        button.addEventListener("click", () => {
+          const bioId = button.getAttribute("data-bio");
+          const bio = this.querySelector(`#${bioId}-bio`);
+          button.textContent =
+            button.textContent === "Read More" ? "Read Less" : "Read More";
+          if (bio) {
+            bio.style.transform =
+              bio.style.transform === "translateY(0%)"
+                ? "translateY(-100%)"
+                : "translateY(0%)";
+          }
+        });
+      });
+    }
+  }
+
+  customElements.define("astro-experts", AstroExperts);
+</script>

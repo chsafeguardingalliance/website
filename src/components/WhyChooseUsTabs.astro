@@ -1,0 +1,126 @@
+---
+
+---
+
+<astro-tabs>
+  <div class="flex flex-col md:flex-row justify-between items-center">
+    <div class="w-full md:w-1/4">
+      <ul class="space-y-1">
+        <li
+          class="cursor-pointer group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10 min-h-[100px] flex items-center justify-center"
+          data-tab="expertise"
+        >
+          <h3>
+            <button
+              class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white active-tab"
+            >
+              <span>Expertise and Experience</span>
+            </button>
+          </h3>
+        </li>
+        <li
+          class="cursor-pointer group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/10 min-h-[100px] flex items-center justify-center"
+          data-tab="bestpractice"
+        >
+          <h3>
+            <button
+              class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white"
+            >
+              <span>Best practice and compliance</span>
+            </button>
+          </h3>
+        </li>
+        <li
+          class="cursor-pointer group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/10 min-h-[100px] flex items-center justify-center"
+          data-tab="support"
+        >
+          <h3>
+            <button
+              class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white"
+            >
+              <span>Support and guidance</span>
+            </button>
+          </h3>
+        </li>
+        <li
+          class="cursor-pointer group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/10 min-h-[100px] flex items-center justify-center"
+          data-tab="partnerships"
+        >
+          <h3>
+            <button
+              class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white"
+            >
+              <span>Partnerships</span>
+            </button>
+          </h3>
+        </li>
+      </ul>
+    </div>
+    <div class="w-full md:w-3/4">
+      <div class="relative">
+        <img
+          id="dashboardImage"
+          src="https://placehold.co/900x500"
+          alt="Financial Dashboard"
+          class="w-full h-auto rounded-lg shadow-lg"
+        />
+        <div
+          id="dashboardOverlay"
+          class="absolute inset-x-0 bottom-0 flex items-center justify-center bg-primary bg-opacity-100 rounded-b-lg p-4"
+        >
+          <p
+            id="dashboardText"
+            class="text-2xl font-bold text-white text-center px-4"
+          >
+            We understand the complexities and challenges of safeguarding within
+            health and social care environments. That's why we offer a range of
+            services, including detailed reports, thorough reviews, and
+            actionable recommendations, all tailored to meet the unique needs of
+            our clients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</astro-tabs>
+
+<script>
+  class AstroTabs extends HTMLElement {
+    constructor() {
+      super();
+
+      const tabs = this.querySelectorAll("li[data-tab]");
+      const image = this.querySelector("#dashboardImage");
+      const text = this.querySelector("#dashboardText");
+
+      const content = {
+        expertise: {
+          image: "https://placehold.co/900x500",
+          text: "We understand the complexities and challenges of safeguarding within health and social care environments. That's why we offer a range of services, including detailed reports, thorough reviews, and actionable recommendations, all tailored to meet the unique needs of our clients. ",
+        },
+        bestpractice: {
+          image: "https://placehold.co/900x500",
+          text: "Our approach is grounded in best practices and current legislation, ensuring that our clients not only meet regulatory standards but also foster a culture of safety and trust.",
+        },
+        support: {
+          image: "https://placehold.co/900x500",
+          text: "Whether you need an in-depth safeguarding audit, support in implementing safeguarding measures, or expert advice on handling sensitive cases, C&H is here to assist. ",
+        },
+        partnerships: {
+          image: "https://placehold.co/900x500",
+          text: "We work closely with partner organisations across the sector, providing the insights and guidance necessary to protect those at risk and promote a safe, caring environment.",
+        },
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const tabName = tab.getAttribute("data-tab");
+          image.src = content[tabName].image;
+          text.textContent = content[tabName].text;
+        });
+      });
+    }
+  }
+
+  customElements.define("astro-tabs", AstroTabs);
+</script>

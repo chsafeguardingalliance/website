@@ -1,123 +1,239 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import WhyChooseUsTabs from "../components/WhyChooseUsTabs.astro";
+import Experts from "../components/Experts.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			viewBox="0 0 495 623"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			<path
-				fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M167.19 364.254C83.4786 364.254 0 404.819 0 404.819C0 404.819 141.781 19.4876 142.087 18.7291C146.434 7.33701 153.027 0 162.289 0H332.441C341.703 0 348.574 7.33701 352.643 18.7291C352.92 19.5022 494.716 404.819 494.716 404.819C494.716 404.819 426.67 364.254 327.525 364.254L264.41 169.408C262.047 159.985 255.147 153.581 247.358 153.581C239.569 153.581 232.669 159.985 230.306 169.408L167.19 364.254ZM160.869 530.172C160.877 530.18 160.885 530.187 160.894 530.195L160.867 530.181C160.868 530.178 160.868 530.175 160.869 530.172ZM136.218 411.348C124.476 450.467 132.698 504.458 160.869 530.172C160.997 529.696 161.125 529.242 161.248 528.804C161.502 527.907 161.737 527.073 161.917 526.233C165.446 509.895 178.754 499.52 195.577 500.01C211.969 500.487 220.67 508.765 223.202 527.254C224.141 534.12 224.23 541.131 224.319 548.105C224.328 548.834 224.337 549.563 224.347 550.291C224.563 566.098 228.657 580.707 237.264 593.914C245.413 606.426 256.108 615.943 270.749 622.478C270.593 621.952 270.463 621.508 270.35 621.126C270.045 620.086 269.872 619.499 269.685 618.911C258.909 585.935 266.668 563.266 295.344 543.933C298.254 541.971 301.187 540.041 304.12 538.112C310.591 533.854 317.059 529.599 323.279 525.007C345.88 508.329 360.09 486.327 363.431 457.844C364.805 446.148 363.781 434.657 359.848 423.275C358.176 424.287 356.587 425.295 355.042 426.275C351.744 428.366 348.647 430.33 345.382 431.934C303.466 452.507 259.152 455.053 214.03 448.245C184.802 443.834 156.584 436.019 136.218 411.348Z"
-				fill="url(#paint0_linear_1805_24383)"></path>
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+  <nav
+    class="fixed top-0 left-0 w-full bg-white bg-opacity-20 backdrop-blur-lg shadow-md z-50 py-4"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <img src="/images/logo.svg" alt="Company Logo" class="h-40" />
+        </div>
+        <div>
+          <button class="btn btn-primary w-40"> Sign in </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section
+    class="min-h-screen mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32"
+  >
+    <div class="text-center">
+      <h1
+        class="pt-32 text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-8"
+      >
+        <span
+          class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary"
+        >
+          Leaders in Safeguarding in Health and Social Care
+        </span>
+      </h1>
+      <p
+        class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+      >
+        Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua.
+      </p>
+      <div class="mt-10 flex justify-center gap-4">
+        <a href="#" class="btn btn-primary lg:btn-lg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 inline-block mr-2"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            ></path>
+            <path d="M12 11v.01"></path>
+            <path d="M8 11v.01"></path>
+            <path d="M16 11v.01"></path>
+          </svg>
+          Speak to an expert
+        </a>
+        <a href="#" class="btn lg:btn-lg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 inline-block mr-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Watch Video
+        </a>
+      </div>
+    </div>
+  </section>
+  <section
+    class="w-full min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-secondary -mt-20"
+  >
+    <h2
+      class="text-5xl sm:text-6xl md:text-7xl font-black text-center text-white mb-12 pt-20"
+    >
+      Why Choose C&H Safeguarding?
+    </h2>
+    <WhyChooseUsTabs />
+  </section>
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-primary-600 mb-4">
+        Our Services
+      </h2>
+      <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        We offer a comprehensive range of safeguarding services tailored to meet
+        the unique needs of health and social care environments.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105 cursor-pointer"
+          onclick="window.location.href='/safeguarding-consultancy'"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-4 bg-primary-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-primary-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Safeguarding Consultancy
+          </h3>
+          <p class="text-gray-600 text-center">
+            Expert advice and guidance to enhance your safeguarding practices
+            and policies.
+          </p>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105 cursor-pointer"
+          onclick="window.location.href='/auditing'"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-4 bg-primary-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-primary-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">Auditing</h3>
+          <p class="text-gray-600 text-center">
+            Comprehensive assessments to identify areas for improvement in your
+            safeguarding procedures.
+          </p>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105 cursor-pointer"
+          onclick="window.location.href='/safeguarding-supervision'"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-4 bg-primary-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-primary-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Safeguarding Supervision
+          </h3>
+          <p class="text-gray-600 text-center">
+            Professional support and guidance for staff involved in safeguarding
+            responsibilities.
+          </p>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105 cursor-pointer"
+          onclick="window.location.href='/workplace-mediation'"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-4 bg-primary-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-primary-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">
+            Workplace Mediation
+          </h3>
+          <p class="text-gray-600 text-center">
+            Facilitated discussions to resolve conflicts and improve workplace
+            relationships.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="min-h-screen bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-primary-600 mb-12">
+        Experts You Can Trust
+      </h2>
+      <Experts />
+    </div>
+  </section>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+  <script>
+    function toggleBio(id) {
+      const bio = document.getElementById(id);
+      if (bio.classList.contains("hidden")) {
+        bio.classList.remove("hidden");
+      } else {
+        bio.classList.add("hidden");
+      }
+    }
+  </script>
+</Layout>
