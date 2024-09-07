@@ -6,12 +6,13 @@ import Experts from "../components/Experts.astro";
 
 <Layout title="Welcome to Astro.">
   <nav
-    class="fixed top-0 left-0 w-full bg-white bg-opacity-20 backdrop-blur-lg shadow-md z-50 py-4"
+    class="fixed top-0 left-0 w-full bg-white bg-opacity-20 backdrop-blur-lg z-50 py-4"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <div class="flex-shrink-0">
-          <img src="/images/logo.svg" alt="Company Logo" class="h-40" />
+        <div class="flex flex-row gap-2 justify-between items-center">
+          <img src="/images/chlogo.png" alt="Company Logo" class="h-12" />
+          <span class="text-xl font-bold">C&H Safeguarding</span>
         </div>
         <div>
           <button class="btn btn-primary w-40"> Sign in </button>
@@ -38,7 +39,7 @@ import Experts from "../components/Experts.astro";
         Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
         et dolore magna aliqua.
       </p>
-      <div class="mt-10 flex justify-center gap-4">
+      <div class="mt-10 flex-col flex md:flex-row justify-center gap-4">
         <a href="#" class="btn btn-primary lg:btn-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
