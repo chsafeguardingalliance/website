@@ -5,7 +5,16 @@
 <astro-tabs>
   <div class="flex flex-col md:flex-row justify-between items-center">
     <div class="w-full md:w-1/4">
-      <ul class="space-y-1">
+      <select
+        class="select select-bordered w-full select-lg mb-4 md:hidden"
+        id="mobileSelect"
+      >
+        <option value="expertise">Expertise and Experience</option>
+        <option value="bestpractice">Best practice and compliance</option>
+        <option value="support">Support and guidance</option>
+        <option value="partnerships">Partnerships</option>
+      </select>
+      <ul class="space-y-1 hidden md:block">
         <li
           class="cursor-pointer group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10 min-h-[100px] flex items-center justify-center"
           data-tab="expertise"
@@ -62,15 +71,15 @@
           id="dashboardImage"
           src="https://placehold.co/900x500"
           alt="Financial Dashboard"
-          class="w-full h-auto rounded-lg shadow-lg"
+          class="w-full h-auto rounded-lg shadow-lg hidden md:block"
         />
         <div
           id="dashboardOverlay"
-          class="min-h-40 absolute inset-x-0 bottom-0 flex items-center justify-center bg-primary bg-opacity-100 rounded-b-lg p-4"
+          class="min-h-40 md:absolute inset-x-0 bottom-0 flex items-center justify-center bg-primary bg-opacity-100 rounded-lg md:rounded-b-lg p-4"
         >
           <p
             id="dashboardText"
-            class="text-2xl font-bold text-white text-center px-4"
+            class="text-lg md:text-2xl font-bold text-white text-center px-4"
           >
             We understand the complexities and challenges of safeguarding within
             health and social care environments. That's why we offer a range of
@@ -92,6 +101,7 @@
       const tabs = this.querySelectorAll("li[data-tab]");
       const image = this.querySelector("#dashboardImage");
       const text = this.querySelector("#dashboardText");
+      const mobileSelect = this.querySelector("#mobileSelect");
 
       const content = {
         expertise: {
@@ -112,13 +122,27 @@
         },
       };
 
+      const updateContent = (tabName) => {
+        if (image) {
+          image.src = content[tabName].image;
+        }
+        if (text) {
+          text.textContent = content[tabName].text;
+        }
+      };
+
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           const tabName = tab.getAttribute("data-tab");
-          image.src = content[tabName].image;
-          text.textContent = content[tabName].text;
+          updateContent(tabName);
         });
       });
+
+      if (mobileSelect) {
+        mobileSelect.addEventListener("change", (event) => {
+          updateContent(event.target.value);
+        });
+      }
     }
   }
 
