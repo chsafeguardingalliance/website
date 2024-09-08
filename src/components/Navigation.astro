@@ -1,0 +1,90 @@
+---
+
+---
+
+<nav
+  class="fixed top-0 left-0 w-full bg-white bg-opacity-20 backdrop-blur-lg z-50 py-4"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+
+      <!-- Logo and company name -->
+      <div
+        class="flex flex-row gap-2 justify-center items-center md:justify-start flex-grow md:flex-grow-0"
+      >
+        <img src="/images/chlogo.png" alt="Company Logo" class="h-12" />
+        <span class="text-xl font-bold">C&H Safeguarding</span>
+      </div>
+
+      <!-- Desktop menu items -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#" class="text-gray-800 hover:text-gray-600">Home</a>
+        <a href="#" class="text-gray-800 hover:text-gray-600">Services</a>
+        <a href="#" class="text-gray-800 hover:text-gray-600">About</a>
+        <a href="#" class="text-gray-800 hover:text-gray-600">Contact</a>
+      </div>
+
+      <!-- Sign in button -->
+      <div class="hidden md:block">
+        <button class="btn btn-outline btn-primary w-40"> Sign in </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-white w-full absolute left-0 top-full transition-all duration-300 ease-in-out"
+  >
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a
+        href="#"
+        class="block px-3 py-2 border-l-4 border-secondary rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >Home</a
+      >
+      <a2
+        href="#"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >Services</a2
+      >
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >About</a
+      >
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >Contact</a
+      >
+      <div class="px-3 py-2">
+        <a class="btn btn-outline w-full"> Sign in </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
