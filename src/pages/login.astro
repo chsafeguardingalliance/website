@@ -4,8 +4,9 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Login | C&H Safeguarding">
   <div class="min-h-screen flex flex-col items-center bg-white">
+    <h1 class="text-primary text-4xl font-bold mt-40">Client Portal</h1>
     <div
-      class="w-full sm:max-w-md mt-48 px-6 py-4 bg-white sm:shadow-md overflow-hidden sm:rounded-lg"
+      class="w-full sm:max-w-md mt-8 px-6 py-4 bg-white sm:shadow-md overflow-hidden sm:rounded-lg"
     >
       <form method="POST" action="/login">
         <div>
@@ -57,8 +58,11 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex flex-col items-center justify-end mt-4 space-y-4">
           <button class="btn btn-primary btn-block text-white"> Log in </button>
+          <a href="/register" class="link link-primary text-sm">
+            No invitation? Click here
+          </a>
         </div>
       </form>
     </div>

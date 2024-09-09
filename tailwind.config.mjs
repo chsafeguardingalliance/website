@@ -16,15 +16,15 @@ export default {
       {
         chsafeguarding: {
           
-"primary": "#024873",
+"primary": "#067B7F",
           
 "primary-content": "#cdd8e3",
           
-"secondary": "#A69886",
+"secondary": "#0E5079",
           
 "secondary-content": "#0a0806",
           
-"accent": "#ea7317",
+"accent": "#50CB9F",
           
 "accent-content": "#130500",
           
