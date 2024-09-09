@@ -1,0 +1,118 @@
+---
+
+---
+
+<astro-video-modal>
+  <dialog id="videoModal" class="modal">
+    <div class="modal-box w-[60%] max-w-5xl h-[45%]">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >✕</button
+        >
+      </form>
+      <div class="w-full h-full">
+        <iframe
+          id="video-frame"
+          class="w-full h-full"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </dialog>
+</astro-video-modal>
+
+<script>
+  class AstroVideoModal extends HTMLElement {
+    constructor() {
+      super();
+      this.init();
+    }
+
+    init() {
+      const watchVideoBtn = document.getElementById("watch-video-btn");
+      const videoModal = this.querySelector(".modal") as HTMLDialogElement;
+      const closeModal = this.querySelector("#close-modal");
+      const videoFrame = this.querySelector(
+        "#video-frame"
+      ) as HTMLIFrameElement;
+      const videoSrc =
+        "https://player.vimeo.com/video/1007649595?badge=0&player_id=0&app_id=58479&autoplay=1";
+
+      if (watchVideoBtn) {
+        watchVideoBtn.addEventListener("click", () =>
+          this.openModal(videoModal, videoFrame, videoSrc)
+        );
+      }
+
+      if (closeModal) {
+        closeModal.addEventListener("click", () =>
+          this.closeModal(videoModal, videoFrame)
+        );
+      }
+
+      videoModal.addEventListener("close", () => {
+        this.closeModal(videoModal, videoFrame);
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === videoModal) {
+          this.closeModal(videoModal, videoFrame);
+        }
+      });
+    }
+
+    openModal(
+      videoModal: HTMLDialogElement,
+      videoFrame: HTMLIFrameElement,
+      videoSrc: string
+    ) {
+      if (videoModal) {
+        videoModal.showModal();
+      }
+      if (videoFrame) {
+        videoFrame.src = videoSrc;
+      }
+    }
+
+    closeModal(videoModal: HTMLDialogElement, videoFrame: HTMLIFrameElement) {
+      if (videoModal) {
+        videoModal.close();
+      }
+      if (videoFrame) {
+        videoFrame.src = "";
+      }
+    }
+  }
+
+  customElements.define("astro-video-modal", AstroVideoModal);
+</script>
+
+<style>
+  .modal-box {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  iframe {
+    display: block; /* iframes are inline by default */
+    background: #000;
+    border: none; /* Reset default border */
+    height: 100%; /* Viewport-relative units */
+    width: 100%;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+</style>

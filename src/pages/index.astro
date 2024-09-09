@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import WhyChooseUsTabs from "../components/WhyChooseUsTabs.astro";
 import Experts from "../components/Experts.astro";
+import VideoModal from "../components/VideoModal.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -45,7 +46,11 @@ import Experts from "../components/Experts.astro";
           </svg>
           Speak To An Expert
         </a>
-        <a href="#" class="btn btn-lg">
+        <button
+          id="watch-video-btn"
+          onclick="videoModal.showModal()"
+          class="btn btn-lg"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-8 w-8 inline-block mr-2"
@@ -58,7 +63,7 @@ import Experts from "../components/Experts.astro";
               clip-rule="evenodd"></path>
           </svg>
           Watch Video
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -216,6 +221,8 @@ import Experts from "../components/Experts.astro";
       </div>
     </div>
   </section>
+
+  <VideoModal />
 
   <script>
     function toggleBio(id) {
