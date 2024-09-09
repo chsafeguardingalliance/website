@@ -28,8 +28,10 @@
       <div
         class="flex flex-row gap-2 justify-center items-center md:justify-start flex-grow md:flex-grow-0"
       >
-        <img src="/images/chlogo.png" alt="Company Logo" class="h-12" />
-        <span class="text-xl font-bold">C&H Safeguarding</span>
+        <a href="/">
+          <img src="/images/chlogo.png" alt="Company Logo" class="h-12" />
+          <span class="text-xl font-bold">C&H Safeguarding</span>
+        </a>
       </div>
 
       <!-- Desktop menu items -->
@@ -88,13 +90,13 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
 </nav>
-
-<script>
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  mobileMenuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
