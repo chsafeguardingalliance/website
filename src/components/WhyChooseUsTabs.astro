@@ -1,5 +1,5 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
 <astro-tabs>
@@ -16,12 +16,12 @@
       </select>
       <ul class="space-y-1 hidden md:block">
         <li
-          class="cursor-pointer group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10 min-h-[100px] flex items-center justify-center"
+          class="cursor-pointer group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/10 min-h-[100px] flex items-center justify-center"
           data-tab="expertise"
         >
           <h3>
             <button
-              class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white active-tab"
+              class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white"
             >
               <span>Expertise and Experience</span>
             </button>
@@ -66,16 +66,18 @@
       </ul>
     </div>
     <div class="w-full md:w-3/4">
-      <div class="relative">
-        <img
+      <div class="relative w-full">
+        <Image
           id="dashboardImage"
-          src="https://placehold.co/900x500"
-          alt="Financial Dashboard"
-          class="w-full h-auto rounded-lg shadow-lg hidden md:block"
+          src="/images/expertise.jpg"
+          alt="Dashboard image"
+          class="h-[700px] w-full object-cover rounded-lg shadow-lg hidden md:block"
+          width={900}
+          height={480}
         />
         <div
           id="dashboardOverlay"
-          class="min-h-40 md:absolute inset-x-0 bottom-0 flex items-center justify-center bg-primary bg-opacity-100 rounded-lg rounded-t-none md:rounded-b-lg p-4"
+          class="min-h-96 sm:min-h-40 md:absolute inset-x-0 bottom-0 w-full flex items-center justify-center bg-primary bg-opacity-100 rounded-lg sm:rounded-t-none md:rounded-b-lg p-4"
         >
           <p
             id="dashboardText"
@@ -93,54 +95,96 @@
   </div>
 </astro-tabs>
 
+<style>
+  .active-tab {
+    @apply lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10 min-h-[100px] flex items-center justify-center ring-2 ring-primary;
+  }
+</style>
+
 <script>
   class AstroTabs extends HTMLElement {
     constructor() {
       super();
 
       const tabs = this.querySelectorAll("li[data-tab]");
-      const image = this.querySelector("#dashboardImage");
+      const image = this.querySelector("#dashboardImage") as HTMLImageElement;
       const text = this.querySelector("#dashboardText");
-      const mobileSelect = this.querySelector("#mobileSelect");
+      const mobileSelect = this.querySelector(
+        "#mobileSelect"
+      ) as HTMLSelectElement;
+
+      const setActiveTab = (tabName: string) => {
+        tabs.forEach((tab) => {
+          if (tab.getAttribute("data-tab") === tabName) {
+            tab.classList.add("active-tab");
+          } else {
+            tab.classList.remove("active-tab");
+          }
+        });
+      };
+
+      setActiveTab("expertise");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const tabName = tab.getAttribute("data-tab");
+          if (tabName) {
+            setActiveTab(tabName);
+            updateContent(tabName);
+          }
+        });
+      });
+
+      if (mobileSelect) {
+        mobileSelect.addEventListener("change", (event) => {
+          const target = event.target as HTMLSelectElement;
+          setActiveTab(target.value);
+          updateContent(target.value);
+        });
+      }
 
       const content = {
         expertise: {
-          image: "https://placehold.co/900x500",
+          image: "/images/expertise.jpg",
           text: "We understand the complexities and challenges of safeguarding within health and social care environments. That's why we offer a range of services, including detailed reports, thorough reviews, and actionable recommendations, all tailored to meet the unique needs of our clients. ",
         },
         bestpractice: {
-          image: "https://placehold.co/900x500",
+          image: "/images/bestpractice.jpg",
           text: "Our approach is grounded in best practices and current legislation, ensuring that our clients not only meet regulatory standards but also foster a culture of safety and trust.",
         },
         support: {
-          image: "https://placehold.co/900x500",
+          image: "/images/support.jpg",
           text: "Whether you need an in-depth safeguarding audit, support in implementing safeguarding measures, or expert advice on handling sensitive cases, C&H is here to assist. ",
         },
         partnerships: {
-          image: "https://placehold.co/900x500",
+          image: "/images/partnerships.jpg",
           text: "We work closely with partner organisations across the sector, providing the insights and guidance necessary to protect those at risk and promote a safe, caring environment. Your trust is our priority, and our mission is to help you achieve the highest standards of safeguarding excellence.",
         },
       };
 
-      const updateContent = (tabName) => {
-        if (image) {
-          image.src = content[tabName].image;
+      const updateContent = (tabName: string) => {
+        if (image && content[tabName as keyof typeof content]) {
+          image.src = content[tabName as keyof typeof content].image;
+          image.alt = `${tabName} image`;
         }
-        if (text) {
-          text.textContent = content[tabName].text;
+        if (text && content[tabName as keyof typeof content]) {
+          text.textContent = content[tabName as keyof typeof content].text;
         }
       };
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           const tabName = tab.getAttribute("data-tab");
-          updateContent(tabName);
+          if (tabName) {
+            updateContent(tabName);
+          }
         });
       });
 
       if (mobileSelect) {
         mobileSelect.addEventListener("change", (event) => {
-          updateContent(event.target.value);
+          const target = event.target as HTMLSelectElement;
+          updateContent(target.value);
         });
       }
     }
